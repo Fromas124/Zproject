@@ -1,0 +1,170 @@
+
+body {
+    font-family: Calibri light;
+    color: rgb(140, 147, 152);
+    font-size: 16px;
+    text-shadow: rgba(0, 0, 0, 0.004) 1px 1px 1px;
+}
+
+p {
+   color: blue;
+}
+p {
+    word-spacing: 1px;
+    line-height: 25px;
+    font-size: 16px;
+    text-align: center;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+}
+
+h2 {
+    text-align: center;
+    padding: 30px;
+    font-style: inherit;
+}
+
+img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+
+.img_sech {
+    width: 106px;
+}
+
+.example_sech {
+    display: inline-block;
+    text-align: center;
+    margin: 0px 10px;
+    width: 1600px;
+    height: 1000px;
+    
+}
+.row_column {
+    width: 360px;
+    height: 360px;
+    padding: 60px;
+}
+.example_sech_home {
+    text-align: center;
+    flex-wrap: wrap;
+}
+.row_column {
+    cursor: pointer;
+    background: rgb(255, 255, 255);
+    border-bottom: 2px solid rgba(240, 242, 244, 0.545);
+    transition: 0.5s;
+}
+.row_column {
+transition: 0.3s; /*Указываем время увеличения картинки*/
+}
+/*Теперь создаем hover для блока*/
+.row_column:hover {
+-webkit-transform: scale(1.2); /*Указываем величину изображения при анимации*/
+-ms-transform: scale(1.2); /*Указываем величину изображения при анимации*/
+transform: scale(1.2); /*Указываем тип увеличения*/
+}
+
+
+.container {
+    display: flex;
+    max-width: 1140px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.row_sech {
+    display: flex;
+    padding: 50px 0 45px;
+}
+
+.contact {
+    position: relative;
+    padding: 30px 0px;
+    background: rgb(250, 250, 250);
+    
+}
+
+.contact .row_column {
+    cursor: pointer;
+    background: rgb(255, 255, 255);
+    padding: 40px 0px;
+    border-bottom: 2px solid rgba(240, 242, 244, 0.545);
+    transition: 0.5s;
+}
+
+.row_column {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    align-items: center;
+    margin: 0px 10px;
+    flex: 1 1 20%;
+}
+
+.row_column_example {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.sechaga {
+    height: 265;
+    width: 187;
+}
+.osobiy {
+    transition: 0.3s;
+}
+.osobiy {
+    cursor: pointer;
+    background: rgb(255, 255, 255);
+    border-bottom: 2px solid rgba(240, 242, 244, 0.545);
+    transition: 0.5s;
+
+}
+.osobiy {
+    width: 360px;
+    height: 360px;
+    padding: 60px;
+}
+.qwe {
+    display: inline-block;
+    margin: 0px 10px;
+}
+.containerasd {
+    display: inline-block;
+    margin: 0px 10px;
+    width: 1600px;
+    height: 1000px;
+}
+.zxc {
+    margin-left: 200;
+    margin-right: 100;
+}
+.qaz {
+        display: flex;
+    justify-content: center;
+}
+
+.osobiy {
+transition: 0.3s; /*Указываем время увеличения картинки*/
+}
+/*Теперь создаем hover для блока*/
+.osobiy:hover {
+-webkit-transform: scale(1.2); /*Указываем величину изображения при анимации*/
+-ms-transform: scale(1.2); /*Указываем величину изображения при анимации*/
+transform: scale(1.2); /*Указываем тип увеличения*/
+}
