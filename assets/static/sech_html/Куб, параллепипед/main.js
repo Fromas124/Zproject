@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { Raycaster } from 'three';
-
+// assets
 // Инициализация
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x0f0f1f);
