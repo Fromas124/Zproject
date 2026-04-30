@@ -17,15 +17,17 @@
         <button id="reset-btn"></button>
     </div>
     <canvas id="threejs-canvas"></canvas>
-    <script type="module" src="./main.js"></script>
     <script type="importmap">
     {
         "imports": {
-        "three": "https://unpkg.com/three@0.128.0/build/three.module.js"
+        "three": "https://unpkg.com",
+        "three/addons/": "https://unpkg.com/three@0.128.0/examples/jsm/"
         }
     }
     </script>
+
     <script type="module" src="main.js"></script>
+
 
 </body>
 </html>
