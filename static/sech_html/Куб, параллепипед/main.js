@@ -1,7 +1,7 @@
-import * as THREE from 'three';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { Raycaster } from 'three';
-//dict
+import * as THREE from 'https://unpkg.com/three@0.128.0/build/three.module.js';
+import { OrbitControls } from 'https://unpkg.com/three@0.128.0/examples/jsm/controls/OrbitControls.js';
+import { Raycaster } from 'https://unpkg.com/three@0.128.0/build/three.module.js';
+// dict
 // Инициализация
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x0f0f1f);
