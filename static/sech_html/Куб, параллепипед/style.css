@@ -1,38 +1,29 @@
 body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            font-family: Arial, sans-serif;
-            background: #1a1a2e;
-            color: white;
-            И добавь в CSS:
-            
-            #container {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-            }
-            
-            #container canvas {
-                display: block;
-            }
-            
-            #ui {
-                position: fixed;
-                top: 10px;
-                left: 10px;
-                z-index: 1000;
-                display: flex;
-                gap: 10px;
-            }
-            
-            #ui button {
-                padding: 8px 14px;
-                cursor: pointer;
-            }
-        }
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+canvas {
+    display: block;
+}
+
+#ui {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 9999;
+
+    display: flex;
+    gap: 10px;
+}
+
+#ui button {
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 9999;
+}
         
         @keyframes pulse {
             0% { opacity: 1; }
