@@ -39,6 +39,7 @@ scene.add(directionalLight);
 
 // Переменные
 let cube = null;
+let cubeEdges = null;
 const spheres = [];
 let plane = null;
         
@@ -63,6 +64,13 @@ transparencyButton.addEventListener('click', () => {
     cubeMaterial.opacity = isTransparent ? 0.12 : 1;
     cubeMaterial.depthWrite = !isTransparent;
     cubeMaterial.needsUpdate = true;
+    cubeEdges.material.color.set(
+        isTransparent ? 0xffffff : 0xffffff
+    );
+
+cubeEdges.material.opacity = isTransparent ? 1 : 1;
+cubeEdges.material.transparent = false;
+cubeEdges.renderOrder = 10;
 
     transparencyButton.textContent = isTransparent
         ? 'Сделать непрозрачным'
@@ -100,13 +108,17 @@ function createCube() {
     cube.userData.clickable = true;
 
     const edges = new THREE.EdgesGeometry(geometry);
-    const lineMaterial = new THREE.LineBasicMaterial({ 
+
+    const lineMaterial = new THREE.LineBasicMaterial({
         color: 0xffffff,
-        linewidth: 2
+        linewidth: 2,
+        depthTest: false
     });
-    const edgesMesh = new THREE.LineSegments(edges, lineMaterial);
-    edgesMesh.userData.type = 'edge';
-    cube.add(edgesMesh);
+        
+    cubeEdges = new THREE.LineSegments(edges, lineMaterial);
+    cubeEdges.userData.type = 'edge';
+        
+    scene.add(cubeEdges);
 
     scene.add(cube);
     return cube;
