@@ -48,6 +48,20 @@ const cubeMaterial = new THREE.MeshStandardMaterial({
     side: THREE.DoubleSide
 });
 
+const transparencyButton = document.getElementById('proz');
+let isTransparent = false;
+transparencyButton.addEventListener('click', () => {
+    isTransparent = !isTransparent;
+    cubeMaterial.transparent = isTransparent;
+    cubeMaterial.opacity = isTransparent ? 0.3 : 1;
+    // Для прозрачного объекта
+    cubeMaterial.depthWrite = !isTransparent;
+    cubeMaterial.needsUpdate = true;
+    transparencyButton.textContent = isTransparent
+        ? 'Сделать непрозрачным'
+        : 'Сделать прозрачным';
+});
+
 const sphereMaterial = new THREE.MeshStandardMaterial({
     color: 0xe74c3c,
     metalness: 0.5,
