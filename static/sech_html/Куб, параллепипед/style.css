@@ -13,16 +13,30 @@ canvas {
     position: fixed;
     top: 20px;
     left: 20px;
-    z-index: 9999;
+
+    z-index: 1000;
 
     display: flex;
     gap: 10px;
 }
 
 #ui button {
+    position: relative;
+    z-index: 1001;
+
     padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+
+    background: white;
+    color: black;
+
     cursor: pointer;
-    z-index: 9999;
+    font-size: 14px;
+}
+
+#ui button:hover {
+    background: #ddd;
 }
         
         @keyframes pulse {
