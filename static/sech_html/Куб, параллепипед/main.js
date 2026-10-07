@@ -180,7 +180,7 @@ function createPlaneThroughSpheres() {
     
     const edges = new THREE.EdgesGeometry(planeGeometry);
     const lineMaterial = new THREE.LineBasicMaterial({ 
-        color: 0xff5500
+        color: 0x27ae60
     });
     const edgesMesh = new THREE.LineSegments(edges, lineMaterial);
     plane.add(edgesMesh);
