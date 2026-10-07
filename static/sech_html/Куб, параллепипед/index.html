@@ -6,28 +6,28 @@
     <title>Сечение куба</title>
     <link rel="stylesheet" href="./style.css">
 </head>
-
 <body>
-
-    <div id="ui">
-        <button type="button" id="proz">Сделать прозрачным</button>
-        <button type="button" id="reset-button">Сбросить</button>
-    </div>
-
+    <div id="container"></div>
+    
     <div id="counter">
         <span id="sphere-count"></span>
     </div>
-
+    
+    <div id="controls">
+        <button id="reset-btn"></button>
+    </div>
+    <canvas id="threejs-canvas"></canvas>
     <script type="importmap">
-    {
+      {
         "imports": {
-            "three": "https://unpkg.com/three@0.128.0/build/three.module.js",
-            "three/addons/": "https://unpkg.com/three@0.128.0/examples/jsm/"
+          "three": "https://unpkg.com/three@0.128.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.128.0/examples/jsm/"
         }
-    }
+      }
     </script>
 
     <script type="module" src="main.js"></script>
+
 
 </body>
 </html>
