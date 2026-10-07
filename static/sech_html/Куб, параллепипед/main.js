@@ -1,10 +1,10 @@
-import * as THREE from 'https://unpkg.com/three@0.128.0/build/three.module.js';
-import { OrbitControls } from 'https://unpkg.com/three@0.128.0/examples/jsm/controls/OrbitControls.js';
-import { Raycaster } from 'https://unpkg.com/three@0.128.0/build/three.module.js';
-// dict
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { Raycaster } from 'three';
+//dict
 // Инициализация
 const scene = new THREE.Scene();
-scene.background = new THREE.Color(0xffffff);
+scene.background = new THREE.Color(0x0f0f1f);
 
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 camera.position.set(10, 10, 10);
@@ -13,11 +13,7 @@ const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-document.body.appendChild(renderer.domElement);
-renderer.domElement.style.position = 'fixed';
-renderer.domElement.style.top = '0';
-renderer.domElement.style.left = '0';
-renderer.domElement.style.zIndex = '0';
+document.getElementById('container').appendChild(renderer.domElement);
 
 // Элементы управления
 const controls = new OrbitControls(camera, renderer.domElement);
@@ -39,7 +35,6 @@ scene.add(directionalLight);
 
 // Переменные
 let cube = null;
-let cubeEdges = null;
 const spheres = [];
 let plane = null;
         
@@ -53,32 +48,6 @@ const cubeMaterial = new THREE.MeshStandardMaterial({
     side: THREE.DoubleSide
 });
 
-const transparencyButton = document.getElementById('proz');
-
-let isTransparent = false;
-
-transparencyButton.addEventListener('click', () => {
-    isTransparent = !isTransparent;
-
-    cubeMaterial.transparent = isTransparent;
-    cubeMaterial.opacity = isTransparent ? 0.2 : 1;
-    cubeMaterial.depthWrite = !isTransparent;
-    cubeMaterial.needsUpdate = true;
-    cubeEdges.material.color.set(
-        isTransparent ? 0xffffff : 0xffffff
-    );
-
-cubeEdges.material.opacity = isTransparent ? 1 : 1;
-cubeEdges.material.transparent = false;
-cubeEdges.renderOrder = 10;
-
-    transparencyButton.textContent = isTransparent
-        ? 'Сделать непрозрачным'
-        : 'Сделать прозрачным';
-
-    console.log('Прозрачность:', cubeMaterial.opacity);
-});
-
 const sphereMaterial = new THREE.MeshStandardMaterial({
     color: 0xe74c3c,
     metalness: 0.5,
@@ -88,12 +57,10 @@ const sphereMaterial = new THREE.MeshStandardMaterial({
 });
 
 const planeMaterial = new THREE.MeshBasicMaterial({
-    color: 0xffcc00,
+    color: 0x2ecc71,
     side: THREE.DoubleSide,
     transparent: true,
-    opacity: 0.8,
-    depthWrite: false,
-    depthTest: false
+    opacity: 0.3
 });
 
 // Функция создания куба
@@ -109,19 +76,14 @@ function createCube() {
     cube.userData.clickable = true;
 
     const edges = new THREE.EdgesGeometry(geometry);
-
-    const edges = new THREE.EdgesGeometry(geometry);
-
-    const lineMaterial = new THREE.LineBasicMaterial({
+    const lineMaterial = new THREE.LineBasicMaterial({ 
         color: 0xffffff,
         linewidth: 2
     });
-
     const edgesMesh = new THREE.LineSegments(edges, lineMaterial);
     edgesMesh.userData.type = 'edge';
-
     cube.add(edgesMesh);
-    edgesMesh.renderOrder = 11;
+
     scene.add(cube);
     return cube;
 }
@@ -189,7 +151,6 @@ function createPlaneThroughSpheres() {
         .multiplyScalar(1/3);
     
     plane = new THREE.Mesh(planeGeometry, planeMaterial);
-    plane.renderOrder = 10;
     plane.position.copy(center);
     plane.lookAt(center.clone().add(normal));
     
