@@ -4,7 +4,7 @@ import { Raycaster } from 'three';
 //dict
 // Инициализация
 const scene = new THREE.Scene();
-scene.background = new THREE.Color(0x0f0f1f);
+scene.background = new THREE.Color(0xffffff);
 
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 camera.position.set(10, 10, 10);
@@ -45,7 +45,9 @@ const cubeMaterial = new THREE.MeshStandardMaterial({
     roughness: 0.4,
     emissive: 0x1a5276,
     emissiveIntensity: 0.1,
-    side: THREE.DoubleSide
+    side: THREE.DoubleSide,
+    transparent: true,
+    opacity: 0.3
 });
 
 const sphereMaterial = new THREE.MeshStandardMaterial({
