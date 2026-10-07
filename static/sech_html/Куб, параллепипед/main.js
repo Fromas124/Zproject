@@ -54,7 +54,6 @@ transparencyButton.addEventListener('click', () => {
     isTransparent = !isTransparent;
     cubeMaterial.transparent = isTransparent;
     cubeMaterial.opacity = isTransparent ? 0.3 : 1;
-    // Для прозрачного объекта
     cubeMaterial.depthWrite = !isTransparent;
     cubeMaterial.needsUpdate = true;
     transparencyButton.textContent = isTransparent
