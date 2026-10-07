@@ -13,7 +13,7 @@ const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-document.getElementById('container').appendChild(renderer.domElement);
+document.body.appendChild(renderer.domElement);
 
 // Элементы управления
 const controls = new OrbitControls(camera, renderer.domElement);
@@ -49,16 +49,22 @@ const cubeMaterial = new THREE.MeshStandardMaterial({
 });
 
 const transparencyButton = document.getElementById('proz');
+
 let isTransparent = false;
+
 transparencyButton.addEventListener('click', () => {
     isTransparent = !isTransparent;
+
     cubeMaterial.transparent = isTransparent;
     cubeMaterial.opacity = isTransparent ? 0.3 : 1;
     cubeMaterial.depthWrite = !isTransparent;
     cubeMaterial.needsUpdate = true;
+
     transparencyButton.textContent = isTransparent
         ? 'Сделать непрозрачным'
         : 'Сделать прозрачным';
+
+    console.log('Прозрачность:', cubeMaterial.opacity);
 });
 
 const sphereMaterial = new THREE.MeshStandardMaterial({
