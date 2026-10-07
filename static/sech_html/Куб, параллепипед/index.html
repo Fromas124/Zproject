@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div id="container"></div>
+    <div id="container">
+      <button type="submit" id="proz">Сделать прозрачным</button>
+    </div>
     
     <div id="counter">
         <span id="sphere-count"></span>
@@ -24,6 +26,20 @@
           "three/addons/": "https://unpkg.com/three@0.128.0/examples/jsm/"
         }
       }
+    const button = document.getElementById('proz');
+
+    let isTransparent = false;
+
+    button.addEventListener('click', () => {
+      isTransparent = !isTransparent;
+
+      mesh.cubeMaterial.transparent = isTransparent;
+      mesh.cubeMaterial.opacity = isTransparent ? 0.3 : 1;
+
+      button.textContent = isTransparent
+        ? 'Сделать непрозрачным'
+        : 'Сделать прозрачным';
+    });
     </script>
 
     <script type="module" src="main.js"></script>
