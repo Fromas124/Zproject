@@ -6,44 +6,31 @@
     <title>Сечение куба</title>
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
+
     <div id="container">
-      <button type="submit" id="proz">Сделать прозрачным</button>
+        <button type="button" id="proz">Сделать прозрачным</button>
     </div>
-    
+
     <div id="counter">
         <span id="sphere-count"></span>
     </div>
-    
+
     <div id="controls">
         <button id="reset-btn"></button>
     </div>
-    <canvas id="threejs-canvas"></canvas>
+
     <script type="importmap">
-      {
+    {
         "imports": {
-          "three": "https://unpkg.com/three@0.128.0/build/three.module.js",
-          "three/addons/": "https://unpkg.com/three@0.128.0/examples/jsm/"
+            "three": "https://unpkg.com/three@0.128.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.128.0/examples/jsm/"
         }
-      }
-    const button = document.getElementById('proz');
-
-    let isTransparent = false;
-
-    button.addEventListener('click', () => {
-      isTransparent = !isTransparent;
-
-      mesh.cubeMaterial.transparent = isTransparent;
-      mesh.cubeMaterial.opacity = isTransparent ? 0.3 : 1;
-
-      button.textContent = isTransparent
-        ? 'Сделать непрозрачным'
-        : 'Сделать прозрачным';
-    });
+    }
     </script>
 
     <script type="module" src="main.js"></script>
-
 
 </body>
 </html>
