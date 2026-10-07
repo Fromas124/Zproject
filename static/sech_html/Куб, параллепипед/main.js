@@ -60,7 +60,7 @@ transparencyButton.addEventListener('click', () => {
     isTransparent = !isTransparent;
 
     cubeMaterial.transparent = isTransparent;
-    cubeMaterial.opacity = isTransparent ? 0.3 : 1;
+    cubeMaterial.opacity = isTransparent ? 0.12 : 1;
     cubeMaterial.depthWrite = !isTransparent;
     cubeMaterial.needsUpdate = true;
 
@@ -80,10 +80,11 @@ const sphereMaterial = new THREE.MeshStandardMaterial({
 });
 
 const planeMaterial = new THREE.MeshBasicMaterial({
-    color: 0x2ecc71,
+    color: 0xffcc00,
     side: THREE.DoubleSide,
     transparent: true,
-    opacity: 0.3
+    opacity: 0.65,
+    depthWrite: false
 });
 
 // Функция создания куба
@@ -179,7 +180,7 @@ function createPlaneThroughSpheres() {
     
     const edges = new THREE.EdgesGeometry(planeGeometry);
     const lineMaterial = new THREE.LineBasicMaterial({ 
-        color: 0x27ae60
+        color: 0xff5500
     });
     const edgesMesh = new THREE.LineSegments(edges, lineMaterial);
     plane.add(edgesMesh);
